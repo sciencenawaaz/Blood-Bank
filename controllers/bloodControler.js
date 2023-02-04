@@ -25,8 +25,6 @@ exports.getAllBlood = catchAsyncErrors(async (req, res) => {
     
 
     const apiFeature = new ApiFeatures(Blood.find(),req.query)
-    .search()
-    .filter()
     .pagination(resultPerPage);
 
 

@@ -51,15 +51,15 @@ exports.getAllOrders = catchAsyncErrors(async (req,res,next)=>{
        return next (new ErrorHander("Orders Empty :( ...!", 404));
     }
 
-    let totalAmount = 0;
+    let totalBlood = 0;
 
     orders.forEach(order => {
-        totalAmount += order.totalPrice;
+        totalBlood ++;
     });
 
     res.status(200).json({
         success:true,
-        totalAmount,
+        totalBlood,
         orders,
     });
 });
